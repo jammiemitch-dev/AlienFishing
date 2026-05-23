@@ -43,11 +43,16 @@ public class FishingScript : MonoBehaviour
           if (InRange(Slider.value, ItemValue, 5))
           {
               Damage = Damage + 1 * Time.deltaTime;
+                TractorBeam.SetActive(true);
           }
-
-          if(Damage > item.Durability)
+            else
             {
-                Debug.Log(item.name+" was caught!");
+                TractorBeam.SetActive(false);
+            }
+
+          if (Damage > item.Durability)
+            {
+                Debug.Log(item.name + " was caught!");
                 StopFishing();
             }
         }
@@ -67,7 +72,6 @@ public class FishingScript : MonoBehaviour
         Slider.gameObject.SetActive(true);
         ItemValue = UnityEngine.Random.Range(20, 100);
         IsFishing = true;
-        TractorBeam.SetActive(true);
         float seconds = ConvertItemRarityToTimerSecs(item.rarity);
         StartCoroutine(FishingTimer(seconds));
     }
