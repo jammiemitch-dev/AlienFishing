@@ -14,12 +14,13 @@ public class FishingScript : MonoBehaviour
     public int ItemValue; // the value on the slider that the item will take - this should have a range of about 3+-;
     private bool IsFishing = false;
     private float Damage;
+    public GameObject TractorBeam;
     void Start()
     {
         SpacePressValue = 5f;
         Slider.value = 0;
         Slider.gameObject.SetActive(false);
-        
+        TractorBeam.SetActive(false);
        
     }
 
@@ -42,16 +43,23 @@ public class FishingScript : MonoBehaviour
           if (InRange(Slider.value, ItemValue, 5))
           {
               Damage = Damage + 1 * Time.deltaTime;
+                TractorBeam.SetActive(true);
           }
-
-          if(Damage > item.Durability)
+            else
             {
-                Debug.Log(item.name+" was caught!");
+                TractorBeam.SetActive(false);
+            }
+
+
+
+          if (Damage > item.Durability)
+            {
+                Debug.Log(item.name + " was caught!");
                 StopFishing(item);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !IsFishing)
         {
             StartFishing();
         }
@@ -75,6 +83,7 @@ public class FishingScript : MonoBehaviour
         Slider.gameObject.SetActive(false);
         PlayerInventoryScript.instance.AddItemToInventory(item);
         IsFishing = false;
+        TractorBeam.SetActive(false);
     }
 
 

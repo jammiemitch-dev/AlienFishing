@@ -1645,6 +1645,7 @@ MonoBehaviour:
   SpacePressValue: 0
   item: {fileID: 11400000, guid: 2f61bb8220322e046a6b0ddba4e6a8a4, type: 2}
   ItemValue: 0
+  TractorBeam: {fileID: 2101245961}
 --- !u!114 &872430624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2863,6 +2864,11 @@ MonoBehaviour:
 --- !u!4 &1968406822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9592053f2d42e4844aebfff27e8bc674, type: 3}
+  m_PrefabInstance: {fileID: 685238126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2101245961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9592053f2d42e4844aebfff27e8bc674, type: 3}
   m_PrefabInstance: {fileID: 685238126}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
