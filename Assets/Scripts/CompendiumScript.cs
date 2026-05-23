@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -57,8 +58,13 @@ public class CompendiumScript : MonoBehaviour
             Debug.LogWarning("Compendium Button has no attached script!");
         }
 
+        if(button.GetComponent<CompButtonScript>().IsClickable == false)
+        {
+            return;
+        }
         else
         {
+            
             CurrentlySelectedIcon.GetComponent<Image>().sprite = button.GetComponent<CompButtonScript>().item.Sprite;
             CurrentlySelectedText.GetComponent<TextMeshProUGUI>().text = button.GetComponent<CompButtonScript>().item.name;
             CurrentlySelecteedDesc.GetComponent<TextMeshProUGUI>().text = button.GetComponent<CompButtonScript>().item.Description;

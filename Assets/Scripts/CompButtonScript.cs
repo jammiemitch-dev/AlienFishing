@@ -4,10 +4,12 @@ using UnityEngine.UI;
 public class CompButtonScript : MonoBehaviour
 {
     public Item item;
-    private Image image;
+    private Image[] images;
+    public bool IsClickable = false;
     void Start()
     {
-        image = GetComponent<Image>();
+        images = GetComponentsInChildren<Image>();
+        images[1].sprite = item.Sprite;
     }
 
     // Update is called once per frame
@@ -15,11 +17,13 @@ public class CompButtonScript : MonoBehaviour
     {
         if (!PlayerInventoryScript.instance.Inventory.Contains(item))
         {
-            image.color = Color.black;
+            images[1].color = Color.black;
+            IsClickable = false;
         }
         else
         {
-            image.color = Color.white;
+            images[1].color = Color.white;
+            IsClickable = true;
         }
     }
 }
