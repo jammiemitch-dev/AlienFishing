@@ -9,15 +9,36 @@ public class CompendiumScript : MonoBehaviour
     public GameObject CurrentlySelectedIcon;
     public GameObject CurrentlySelectedText;
     public GameObject CurrentlySelecteedDesc;
+
+    private RectTransform Compendium;
+    public float LerpSpeed;
+
+    Vector2 ClosedPosition = new Vector3(-10,-150);
+    Vector2 OpenedPosition = new Vector2(-10, 0f);
+    public bool IsOpened;
     void Start()
     {
-        
+        Compendium = transform.GetChild(0).gameObject.GetComponent<RectTransform>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+             IsOpened = !IsOpened;          
+        }
+
+
+        if (IsOpened)
+        {
+            Compendium.anchoredPosition = Vector2.Lerp(Compendium.anchoredPosition, OpenedPosition, LerpSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Compendium.anchoredPosition = Vector2.Lerp(Compendium.anchoredPosition, ClosedPosition, LerpSpeed * Time.deltaTime);
+        }
     }
     
     public void OnCompendiumButtonPress(GameObject button)
@@ -34,4 +55,6 @@ public class CompendiumScript : MonoBehaviour
             CurrentlySelecteedDesc.GetComponent<TextMeshProUGUI>().text = button.GetComponent<CompButtonScript>().item.Description;
         }
     }
+
+
 }
