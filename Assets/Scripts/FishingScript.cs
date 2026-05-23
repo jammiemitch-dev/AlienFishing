@@ -14,11 +14,16 @@ public class FishingScript : MonoBehaviour
     public int ItemValue; // the value on the slider that the item will take - this should have a range of about 3+-;
     private bool IsFishing = false;
     private float Damage;
+    private GameObject TractorBeam;
     void Start()
     {
+
+
+        //Init variables
         SpacePressValue = 5f;
         Slider.value = 0;
         Slider.gameObject.SetActive(false);
+        TractorBeam = transform.GetChild(0).gameObject;
        
     }
 
@@ -28,10 +33,7 @@ public class FishingScript : MonoBehaviour
         if(Slider.gameObject.activeSelf) //If fishing minigame is active
         {
             Slider.value -= 20 * Time.deltaTime;
-
-
-
-            // if space key is pressed
+          // if space key is pressed
           if (Input.GetKeyDown(KeyCode.Space))
           {
             Slider.value += SpacePressValue;
@@ -41,11 +43,16 @@ public class FishingScript : MonoBehaviour
           if (InRange(Slider.value, ItemValue, 5))
           {
               Damage = Damage + 1 * Time.deltaTime;
+                TractorBeam.SetActive(true);
           }
-
-          if(Damage > item.Durability)
+            else
             {
-                Debug.Log(item.name+" was caught!");
+                TractorBeam.SetActive(false);
+            }
+
+          if (Damage > item.Durability)
+            {
+                Debug.Log(item.name + " was caught!");
                 StopFishing();
             }
         }
@@ -54,6 +61,8 @@ public class FishingScript : MonoBehaviour
         {
             StartFishing();
         }
+
+
     }
 
 
@@ -63,7 +72,6 @@ public class FishingScript : MonoBehaviour
         Slider.gameObject.SetActive(true);
         ItemValue = UnityEngine.Random.Range(20, 100);
         IsFishing = true;
-
         float seconds = ConvertItemRarityToTimerSecs(item.rarity);
         StartCoroutine(FishingTimer(seconds));
     }
@@ -74,6 +82,7 @@ public class FishingScript : MonoBehaviour
         Slider.gameObject.SetActive(false);
         item = null;
         IsFishing = false;
+        TractorBeam.SetActive(false);
     }
 
 
