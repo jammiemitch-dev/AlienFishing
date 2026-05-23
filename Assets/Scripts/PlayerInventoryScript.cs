@@ -31,11 +31,13 @@ public class PlayerInventoryScript : MonoBehaviour
         {
             return;
         }
+
         if (!Inventory.Contains(item))
         {
             Debug.Log("New Item Added!!");
         }
-        Inventory.Add(item);
+
+            Inventory.Add(item);
         
     }
 }

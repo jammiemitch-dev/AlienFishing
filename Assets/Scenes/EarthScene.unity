@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 271841394}
+      - m_Target: {fileID: 350211985}
         m_TargetAssemblyTypeName: CompendiumScript, Assembly-CSharp
         m_MethodName: OnCompendiumButtonPress
         m_Mode: 2
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -3.5812626, z: 0, w: 4.1724997}
+  m_margin: {x: -8.4541855, y: -3.5812626, z: -8.291122, w: 4.1724997}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1058,7 +1058,6 @@ GameObject:
   - component: {fileID: 271841391}
   - component: {fileID: 271841393}
   - component: {fileID: 271841392}
-  - component: {fileID: 271841394}
   m_Layer: 5
   m_Name: Compendium
   m_TagString: Untagged
@@ -1073,20 +1072,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271841390}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 3, y: 5, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 30965369}
   - {fileID: 1361992673}
   - {fileID: 1362142888}
-  m_Father: {fileID: 1047584689}
+  m_Father: {fileID: 350211984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305, y: 2}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -10, y: 0}
+  m_SizeDelta: {x: 120, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271841392
 MonoBehaviour:
@@ -1126,21 +1125,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271841390}
   m_CullTransparentMesh: 1
---- !u!114 &271841394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271841390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81fce412ae0d4384dbcf49d274d1c85e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CompendiumScript
-  CurrentlySelectedIcon: {fileID: 1248423494}
-  CurrentlySelectedText: {fileID: 1267823037}
-  CurrentlySelecteedDesc: {fileID: 162978134}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1295,61 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &350211983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 350211984}
+  - component: {fileID: 350211985}
+  m_Layer: 5
+  m_Name: CompendiumParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &350211984
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350211983}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4.999937}
+  m_LocalScale: {x: 3, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 271841391}
+  m_Father: {fileID: 1047584689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -305.00003, y: 2.0002348}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &350211985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350211983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fce412ae0d4384dbcf49d274d1c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompendiumScript
+  CurrentlySelectedIcon: {fileID: 1248423494}
+  CurrentlySelectedText: {fileID: 1267823037}
+  CurrentlySelecteedDesc: {fileID: 162978134}
+  LerpSpeed: 12
+  FishingSlider: {fileID: 705117278}
+  IsOpened: 0
 --- !u!1 &492332169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,8 +1425,8 @@ Light:
   m_Color: {r: 0, g: 1, b: 0.050949812, a: 1}
   m_Intensity: 1
   m_Range: 0.4
-  m_SpotAngle: 75.90505
-  m_InnerSpotAngle: 19.712687
+  m_SpotAngle: 130
+  m_InnerSpotAngle: 72.61431
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 0
@@ -2310,7 +2349,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 705117279}
-  - {fileID: 271841391}
+  - {fileID: 350211984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2591,7 +2630,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 11.517282}
+  m_margin: {x: -9.506077, y: 0, z: 0, w: 11.517282}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2724,7 +2763,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1361992675}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 350211985}
+        m_TargetAssemblyTypeName: CompendiumScript, Assembly-CSharp
+        m_MethodName: OnCompendiumButtonPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1361992672}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1361992675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2775,7 +2826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32485e0954500e94abb19c699841d129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompButtonScript
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 7cedbb7be868bdb47878e9946ef239ff, type: 2}
 --- !u!1 &1362142887
 GameObject:
   m_ObjectHideFlags: 0

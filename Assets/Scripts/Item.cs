@@ -14,4 +14,14 @@ public class Item : ScriptableObject
     //this is the rairty of the object created
     public Rarity rarity;
     public float Durability;
+    public float MinWeight;
+    public float MaxWeight;
+    public float Weight;
+
+
+    public void GenerateWeightKG()
+    {
+        Weight = Random.Range(MinWeight, MaxWeight);
+    }
+
 }
