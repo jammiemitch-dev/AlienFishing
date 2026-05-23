@@ -72,6 +72,8 @@ public class FishingScript : MonoBehaviour
         Slider.gameObject.SetActive(true);
         ItemValue = UnityEngine.Random.Range(20, 100);
         IsFishing = true;
+        Damage = 0;
+        Slider.value = 0;
 
         float seconds = ConvertItemRarityToTimerSecs(item.rarity);
         StartCoroutine(FishingTimer(seconds));
@@ -84,6 +86,8 @@ public class FishingScript : MonoBehaviour
         PlayerInventoryScript.instance.AddItemToInventory(item);
         IsFishing = false;
         TractorBeam.SetActive(false);
+        Damage = 0;
+        Slider.value = 0;
     }
 
 
