@@ -12,7 +12,7 @@ public class CompendiumScript : MonoBehaviour
 
     private RectTransform Compendium;
     public float LerpSpeed;
-
+    public GameObject FishingSlider;
     Vector2 ClosedPosition = new Vector3(-10,-150);
     Vector2 OpenedPosition = new Vector2(-10, 0f);
     public bool IsOpened;
@@ -25,6 +25,15 @@ public class CompendiumScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (FishingSlider.activeSelf)
+        {
+            IsOpened = false;
+        }
+
+
+
+
         if (Input.GetKeyDown(KeyCode.I))
         {
              IsOpened = !IsOpened;          
