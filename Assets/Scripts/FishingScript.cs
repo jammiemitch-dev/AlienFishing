@@ -3,7 +3,7 @@ using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
 public class FishingScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,6 +15,10 @@ public class FishingScript : MonoBehaviour
     private bool IsFishing = false;
     private float Damage;
     public GameObject TractorBeam;
+
+
+    //Each Area should have its own itempool , this is just for testing
+    public List<Item> ItemPool;
     void Start()
     {
         SpacePressValue = 5f;
@@ -27,8 +31,10 @@ public class FishingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Slider.gameObject.activeSelf) //If fishing minigame is active
         {
+
             Slider.value -= 20 * Time.deltaTime;
 
 
@@ -69,9 +75,12 @@ public class FishingScript : MonoBehaviour
 
     void StartFishing()
     {
+        item = ItemPool[UnityEngine.Random.Range(0,ItemPool.Count)];
         Slider.gameObject.SetActive(true);
         ItemValue = UnityEngine.Random.Range(20, 100);
         IsFishing = true;
+        Damage = 0;
+        Slider.value = 0;
 
         float seconds = ConvertItemRarityToTimerSecs(item.rarity);
         StartCoroutine(FishingTimer(seconds));
@@ -84,6 +93,8 @@ public class FishingScript : MonoBehaviour
         PlayerInventoryScript.instance.AddItemToInventory(item);
         IsFishing = false;
         TractorBeam.SetActive(false);
+        Damage = 0;
+        Slider.value = 0;
     }
 
 
