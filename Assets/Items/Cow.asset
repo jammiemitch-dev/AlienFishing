@@ -17,3 +17,6 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: a71eca4f85cb3e74aadb198b7645382c, type: 3}
   rarity: 0
   Durability: 3
+  MinWeight: 400
+  MaxWeight: 800
+  Weight: 0

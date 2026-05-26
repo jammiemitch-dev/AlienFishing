@@ -15,12 +15,13 @@ public class FishingScript : MonoBehaviour
     private bool IsFishing = false;
     private float Damage;
     public GameObject TractorBeam;
-
+    private Coroutine IsValNull;
 
     //Each Area should have its own itempool , this is just for testing
     public List<Item> ItemPool;
     void Start()
     {
+        IsValNull = null;
         SpacePressValue = 5f;
         Slider.value = 0;
         Slider.gameObject.SetActive(false);
@@ -39,12 +40,17 @@ public class FishingScript : MonoBehaviour
 
 
 
+
+
+        
             // if space key is pressed
           if (Input.GetKeyDown(KeyCode.Space))
           {
             Slider.value += SpacePressValue;
           }
         //-------------------------------;
+
+        
 
           if (InRange(Slider.value, ItemValue, 5))
           {
@@ -65,6 +71,17 @@ public class FishingScript : MonoBehaviour
             }
         }
 
+
+
+        //Random ItemVal Change
+
+        //if (IsValNull == null)
+        //{
+        //    IsValNull = StartCoroutine(CheckForItemSliderChange(2));
+        //}
+
+
+
         if (Input.GetKeyDown(KeyCode.Tab) && !IsFishing)
         {
             StartFishing();
@@ -81,6 +98,7 @@ public class FishingScript : MonoBehaviour
         IsFishing = true;
         Damage = 0;
         Slider.value = 0;
+        Slider.gameObject.GetComponentInChildren<ItemSliderScript>().SavedSliderValue = ItemValue;
 
         float seconds = ConvertItemRarityToTimerSecs(item.rarity);
         StartCoroutine(FishingTimer(seconds));
@@ -121,6 +139,7 @@ public class FishingScript : MonoBehaviour
         }
 
         num = RarityValue * UnityEngine.Random.Range(1.1f, 1.6f);
+        num = Mathf.Clamp(num,5f, 1000f);
         return num;
 
     }
@@ -137,5 +156,40 @@ public class FishingScript : MonoBehaviour
     bool InRange(float value, float centre, float radius)
     {
         return value >= centre - radius && value <= centre + radius;
+    }
+
+
+    int ChangeItemSliderValue()
+    {
+        float CurrentVal = ItemValue;
+        float ItemRarityVal = ConvertItemRarityToTimerSecs(item.rarity);
+        float NewSliderValue;
+        if (CurrentVal <= 20)
+        {
+            NewSliderValue = CurrentVal * UnityEngine.Random.Range(1f, 1.3f) + ItemRarityVal * 1.3f;
+        }
+        else
+        {
+            NewSliderValue = CurrentVal * UnityEngine.Random.Range(-1f, 1f) + ItemRarityVal * 1.3f;
+        }
+
+        NewSliderValue = Mathf.Clamp(NewSliderValue, 0, 100);
+
+        return Convert.ToInt32(NewSliderValue);
+
+    }
+
+
+
+    public IEnumerator CheckForItemSliderChange(float seconds)
+    {
+        int chance = UnityEngine.Random.Range(0,5);
+        yield return new WaitForSecondsRealtime(seconds);
+        chance = UnityEngine.Random.Range(1, 5);
+        if(chance == 5)
+        {
+            ItemValue = ChangeItemSliderValue();
+        }
+        IsValNull = null;
     }
 }

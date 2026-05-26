@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4968273f2827fb4cb853094e848378c, type: 3}
-  m_Name: CRT
+  m_Name: Fish
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  Description: Display's images of other humans?
-  Sprite: {fileID: 21300000, guid: 4d23234d1c877904eb0b2d847d83955e, type: 3}
-  rarity: 1
-  Durability: 4
-  MinWeight: 7
-  MaxWeight: 22
+  Description: In about 1000 years these creatures will take over this planet
+  Sprite: {fileID: 21300000, guid: 4f47f6d02cf5cf14a9a4c28fff425c98, type: 3}
+  rarity: 0
+  Durability: 3
+  MinWeight: 2.2
+  MaxWeight: 10.5
   Weight: 0
