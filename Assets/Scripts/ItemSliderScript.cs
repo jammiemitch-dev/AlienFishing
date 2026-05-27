@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class ItemSliderScript : MonoBehaviour
     public Slider ParentSlider;
     private Slider slider;
     private GameObject player;
+    public float SavedSliderValue;
+
     void Start()
     {
         slider = GetComponent<Slider>();
@@ -21,7 +24,7 @@ public class ItemSliderScript : MonoBehaviour
         if(ParentSlider.gameObject.activeSelf)
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            slider.value = player.GetComponent<FishingScript>().ItemValue;
+            slider.value = SavedSliderValue;
         }
 
         else
@@ -29,5 +32,9 @@ public class ItemSliderScript : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
        
+        if(SavedSliderValue != player.GetComponent<FishingScript>().ItemValue)
+        {
+            SavedSliderValue = Mathf.Lerp(SavedSliderValue, player.GetComponent<FishingScript>().ItemValue, 2 * Time.deltaTime);
+        }
     }
 }

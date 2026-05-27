@@ -4,7 +4,11 @@ using NUnit.Framework;
 public class PlayerInventoryScript : MonoBehaviour
 {
     public List<Item> Inventory = new List<Item>();
+    public GameObject ItemShowCase;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+    public Item TestItem;
     public static PlayerInventoryScript instance { get; private set; }
 
     private void Awake()
@@ -21,7 +25,10 @@ public class PlayerInventoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            AddItemToInventory(TestItem);
+        }
     }
 
     public void AddItemToInventory(Item item)
@@ -32,6 +39,8 @@ public class PlayerInventoryScript : MonoBehaviour
             return;
         }
 
+        ItemShowCase.GetComponent<ItemShowCaseScript>().SetValues(item);
+        ItemShowCase.SetActive(true);
         if (!Inventory.Contains(item))
         {
             Debug.Log("New Item Added!!");
