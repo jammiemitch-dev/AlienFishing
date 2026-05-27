@@ -75,10 +75,10 @@ public class FishingScript : MonoBehaviour
 
         //Random ItemVal Change
 
-        //if (IsValNull == null)
-        //{
-        //    IsValNull = StartCoroutine(CheckForItemSliderChange(2));
-        //}
+        if (IsValNull == null)
+        {
+            IsValNull = StartCoroutine(CheckForItemSliderChange(2));
+        }
 
 
 
@@ -124,12 +124,16 @@ public class FishingScript : MonoBehaviour
         {
             case (Item.Rarity.Common):
 
-                RarityValue = 20;
+                RarityValue = 16;
                 break;
 
 
             case (Item.Rarity.Uncommon):
                 RarityValue = 15;
+                break;
+
+            case (Item.Rarity.Rare):
+                RarityValue = 10;
                 break;
 
 

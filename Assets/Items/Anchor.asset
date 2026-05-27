@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Just like humans to use a big heavy thing to stop instead of just
     stopping
   Sprite: {fileID: 21300000, guid: 128adc37fa6a5c74d816f84cc65cbf0d, type: 3}
-  rarity: 0
+  rarity: 2
   Durability: 10
   MinWeight: 490
   MaxWeight: 1050
