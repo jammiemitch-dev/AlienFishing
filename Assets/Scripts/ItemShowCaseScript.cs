@@ -39,7 +39,6 @@ public class ItemShowCaseScript : MonoBehaviour
         {
             LerpSpeed = 2.2f;
         }
-
         else
         {
             LerpSpeed = 4f;
@@ -53,10 +52,14 @@ public class ItemShowCaseScript : MonoBehaviour
             ChangeScale();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.anyKeyDown)
         {
             LerpThenDisable();
         }
+
+        RotateSprite();
+
+
 
         if (ScaleStart < 0.01f && ScaleEnd == 0)
         {
@@ -64,12 +67,7 @@ public class ItemShowCaseScript : MonoBehaviour
         }
 
 
-        ///ROTATION STUFF
-        ///
-        // 10 represents the amplitude
-        float y = Mathf.Sin(Time.time * freq) * 10f;
-        ImgTransform.rotation = Quaternion.Euler(0, 0, y);
-        Debug.Log(y);
+        
 
 
     }
@@ -108,5 +106,17 @@ public class ItemShowCaseScript : MonoBehaviour
         {
             textbox.color = Color.white;
         }
+    }
+
+
+
+    void RotateSprite()
+    {
+        ///ROTATION STUFF
+        ///
+        // 10 represents the amplitude
+        float y = Mathf.Sin(Time.time * freq) * 10f;
+        ImgTransform.localEulerAngles = new Vector3(0, 0, y);
+        Debug.Log(y);
     }
 }
