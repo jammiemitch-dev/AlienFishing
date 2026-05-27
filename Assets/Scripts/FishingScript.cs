@@ -77,7 +77,7 @@ public class FishingScript : MonoBehaviour
 
         if (IsValNull == null)
         {
-            IsValNull = StartCoroutine(CheckForItemSliderChange(2));
+            IsValNull = StartCoroutine(CheckForItemSliderChange(1));
         }
 
 
@@ -190,7 +190,7 @@ public class FishingScript : MonoBehaviour
         int chance = UnityEngine.Random.Range(0,5);
         yield return new WaitForSecondsRealtime(seconds);
         chance = UnityEngine.Random.Range(1, 5);
-        if(chance == 5)
+        if(chance == 1)
         {
             ItemValue = ChangeItemSliderValue();
         }

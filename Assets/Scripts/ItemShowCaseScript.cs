@@ -52,7 +52,7 @@ public class ItemShowCaseScript : MonoBehaviour
             ChangeScale();
         }
 
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && !Input.GetKey(KeyCode.Space))
         {
             LerpThenDisable();
         }
