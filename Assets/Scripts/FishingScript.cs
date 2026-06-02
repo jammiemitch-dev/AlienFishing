@@ -13,7 +13,7 @@ public class FishingScript : MonoBehaviour
     public Item item;
     public int ItemValue; // the value on the slider that the item will take - this should have a range of about 3+-;
     private bool IsFishing = false;
-    private float Damage;
+    public float Damage;
     public GameObject TractorBeam;
     private Coroutine IsValNull;
 
@@ -102,6 +102,7 @@ public class FishingScript : MonoBehaviour
 
         float seconds = ConvertItemRarityToTimerSecs(item.rarity);
         StartCoroutine(FishingTimer(seconds));
+        
     }
 
     //STOP FISHING SHOULD INCLUDE A PARAMETER FOR IF AN ITEM WAS CAUGHT
