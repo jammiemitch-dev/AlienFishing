@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using NUnit.Framework;
+using System;
 public class PlayerInventoryScript : MonoBehaviour
 {
     public List<Item> Inventory = new List<Item>();
     public GameObject ItemShowCase;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    public GameObject GameManager;
 
     public Item TestItem;
     public static PlayerInventoryScript instance { get; private set; }
@@ -21,6 +22,8 @@ public class PlayerInventoryScript : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        
     }
     // Update is called once per frame
     void Update()
@@ -39,6 +42,9 @@ public class PlayerInventoryScript : MonoBehaviour
             return;
         }
 
+        int intamount = Convert.ToInt32(item.Durability);
+
+        GameManager.GetComponent<ScrapManager>().AddScrap(intamount);
         ItemShowCase.GetComponent<ItemShowCaseScript>().SetValues(item);
         ItemShowCase.SetActive(true);
         if (!Inventory.Contains(item))

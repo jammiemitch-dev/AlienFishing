@@ -14,11 +14,13 @@ public class FishingScript : MonoBehaviour
     public int ItemValue; // the value on the slider that the item will take - this should have a range of about 3+-;
     private bool IsFishing = false;
     public float Damage;
+    public float DamageMultiplier;
     public GameObject TractorBeam;
+    public AreaScript AreaScript;
     private Coroutine IsValNull;
 
     //Each Area should have its own itempool , this is just for testing
-    public List<Item> ItemPool;
+    public Item[] ItemPool;
     void Start()
     {
         IsValNull = null;
@@ -54,7 +56,7 @@ public class FishingScript : MonoBehaviour
 
           if (InRange(Slider.value, ItemValue, 5))
           {
-              Damage = Damage + 1 * Time.deltaTime;
+              Damage = Damage * DamageMultiplier + 1 * Time.deltaTime;
                 TractorBeam.SetActive(true);
           }
             else
@@ -92,7 +94,8 @@ public class FishingScript : MonoBehaviour
 
     void StartFishing()
     {
-        item = ItemPool[UnityEngine.Random.Range(0,ItemPool.Count)];
+        ItemPool = AreaScript.CurrentItemPool;
+        item = ItemPool[UnityEngine.Random.Range(0,ItemPool.Length)];
         Slider.gameObject.SetActive(true);
         ItemValue = UnityEngine.Random.Range(20, 100);
         IsFishing = true;
