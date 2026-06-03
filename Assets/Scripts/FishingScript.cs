@@ -14,6 +14,7 @@ public class FishingScript : MonoBehaviour
     public int ItemValue; // the value on the slider that the item will take - this should have a range of about 3+-;
     private bool IsFishing = false;
     public float Damage;
+    public float DamageMultiplier;
     public GameObject TractorBeam;
     private Coroutine IsValNull;
 
@@ -54,7 +55,7 @@ public class FishingScript : MonoBehaviour
 
           if (InRange(Slider.value, ItemValue, 5))
           {
-              Damage = Damage + 1 * Time.deltaTime;
+              Damage = Damage * DamageMultiplier + 1 * Time.deltaTime;
                 TractorBeam.SetActive(true);
           }
             else
