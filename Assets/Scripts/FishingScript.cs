@@ -16,10 +16,11 @@ public class FishingScript : MonoBehaviour
     public float Damage;
     public float DamageMultiplier;
     public GameObject TractorBeam;
+    public AreaScript AreaScript;
     private Coroutine IsValNull;
 
     //Each Area should have its own itempool , this is just for testing
-    public List<Item> ItemPool;
+    public Item[] ItemPool;
     void Start()
     {
         IsValNull = null;
@@ -93,7 +94,8 @@ public class FishingScript : MonoBehaviour
 
     void StartFishing()
     {
-        item = ItemPool[UnityEngine.Random.Range(0,ItemPool.Count)];
+        ItemPool = AreaScript.CurrentItemPool;
+        item = ItemPool[UnityEngine.Random.Range(0,ItemPool.Length)];
         Slider.gameObject.SetActive(true);
         ItemValue = UnityEngine.Random.Range(20, 100);
         IsFishing = true;
