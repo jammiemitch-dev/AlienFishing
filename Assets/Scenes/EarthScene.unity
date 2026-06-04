@@ -787,8 +787,15 @@ MonoBehaviour:
   FarmLand_ItemPool:
   - {fileID: 11400000, guid: aadf079bf77a5614891e956297d855b7, type: 2}
   - {fileID: 11400000, guid: 2f61bb8220322e046a6b0ddba4e6a8a4, type: 2}
-  Ocean_ItemPool: []
-  City_ItemPool: []
+  Ocean_ItemPool:
+  - {fileID: 11400000, guid: faa1008d421182c4787b804f3d363dd5, type: 2}
+  - {fileID: 11400000, guid: aadf079bf77a5614891e956297d855b7, type: 2}
+  - {fileID: 11400000, guid: 998d909474788854da66033e270391b2, type: 2}
+  City_ItemPool:
+  - {fileID: 11400000, guid: e048dc1a033ce2d438561c3cb7f4089b, type: 2}
+  - {fileID: 11400000, guid: f51ddc1a1535e814c8d5a0a010f12aa1, type: 2}
+  - {fileID: 11400000, guid: 26138f439f5c52e44b4fbd59339f89dd, type: 2}
+  - {fileID: 11400000, guid: f000efc0a1c6937498f240ea641619db, type: 2}
   Artic_ItemPool: []
 --- !u!4 &872430622 stripped
 Transform:
