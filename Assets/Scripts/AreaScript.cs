@@ -29,6 +29,10 @@ public class AreaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+        //Switches ItemPool Depending corrosponding with Area
         switch (CurrentArea)
         {
 

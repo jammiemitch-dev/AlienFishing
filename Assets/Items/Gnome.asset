@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: A sculpture of an oddly shaped human
   Sprite: {fileID: 21300000, guid: 1228a933c75a7194e9584435df730c23, type: 3}
   rarity: 1
-  Durability: 5
+  Durability: 100
   MinWeight: 1.5
   MaxWeight: 5.1
   Weight: 0

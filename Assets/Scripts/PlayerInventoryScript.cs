@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using NUnit.Framework;
 using System;
+using Unity.Mathematics;
 public class PlayerInventoryScript : MonoBehaviour
 {
     public List<Item> Inventory = new List<Item>();
@@ -42,9 +43,36 @@ public class PlayerInventoryScript : MonoBehaviour
             return;
         }
 
-        int intamount = Convert.ToInt32(item.Durability);
 
-        GameManager.GetComponent<ScrapManager>().AddScrap(intamount);
+
+        //give scrap dependent on item rarity
+        int scrapamount;
+        switch (item.rarity)
+        {
+
+            case Item.Rarity.Common:
+                scrapamount = UnityEngine.Random.Range(2, 3);
+                break;
+
+            case Item.Rarity.Uncommon:
+                scrapamount = UnityEngine.Random.Range(3, 6);
+                break;
+
+            case Item.Rarity.Rare:
+                scrapamount = UnityEngine.Random.Range(6, 7);
+                break;
+
+            default:
+                Debug.LogWarning("Item Rarity not recognized");
+                scrapamount = 0;
+                break;
+
+
+
+        }
+
+
+        GameManager.GetComponent<ScrapManager>().AddScrap(scrapamount);
         ItemShowCase.GetComponent<ItemShowCaseScript>().SetValues(item);
         ItemShowCase.SetActive(true);
         if (!Inventory.Contains(item))

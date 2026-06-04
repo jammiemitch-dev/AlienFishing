@@ -1,9 +1,10 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class ScrapManager : MonoBehaviour
 {
-    public int Scrap;
+    public float Scrap;
     public TextMeshProUGUI ScrapText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public ScrapManager instance;
@@ -29,11 +30,11 @@ public class ScrapManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScrapText.text = ("Scrap: " + Scrap);
+        ScrapText.text = ("Scrap: " +Convert.ToInt32(Scrap));
     }
 
 
-    public void AddScrap(int amount)
+    public void AddScrap(float amount)
     {
         //check for if amount is 
         if (Scrap + amount < 0)

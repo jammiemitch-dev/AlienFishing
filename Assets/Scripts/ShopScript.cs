@@ -1,17 +1,19 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class ShopScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public int Scrap;
+    public ScrapManager ScrapManager;
     public bool IsOpened;
     public float LerpSpeed;
     public GameObject Compendium;
     public GameObject FishingSlider;
     private RectTransform ShopRect;
-
     Vector2 ClosedPosition = new Vector3(660,0);
     Vector2 OpenedPosition = new Vector2(0, 0f);
+
+    public List<Upgrade> Upgrades;
+    
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (FishingSlider.activeSelf)
         {
@@ -48,8 +51,23 @@ public class ShopScript : MonoBehaviour
             ShopRect.anchoredPosition = Vector2.Lerp(ShopRect.anchoredPosition, ClosedPosition, LerpSpeed * Time.deltaTime);
         }
 
+
+
+
+
     }
 
 
+    public void OnShopButtonClick(UpgradeButtonScript buttonscript)
+    {
+        Upgrade upgrade = buttonscript.upgrade;
+
+
+       if(ScrapManager.Scrap >= upgrade.CurrentPrice)
+        {
+            ScrapManager.AddScrap(-upgrade.CurrentPrice);
+            upgrade.LevelUp();
+        }
+    }
     
 }
