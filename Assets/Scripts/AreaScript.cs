@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using TMPro;
+using System;
 public class AreaScript : MonoBehaviour
 {
     public enum Areas { 
@@ -14,15 +16,28 @@ public class AreaScript : MonoBehaviour
 
     public Areas CurrentArea;
     public Item[] CurrentItemPool;
-
+  
     public Item[] FarmLand_ItemPool;
     public Item[] Ocean_ItemPool;
     public Item[] City_ItemPool;
     public Item[] Artic_ItemPool;
 
+
+
+    //All the stuff other than area defs
+    private TextMeshProUGUI AreaText;
+    public GameObject ButtonParent;
+
+    private void Awake()
+    {
+        RefreshCompendiumItems();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AreaText = GameObject.Find("AreaUI").GetComponentInChildren<TextMeshProUGUI>();
+
         
     }
 
@@ -30,6 +45,7 @@ public class AreaScript : MonoBehaviour
     void Update()
     {
 
+        AreaText.text = Convert.ToString(CurrentArea);
 
 
         //Switches ItemPool Depending corrosponding with Area
@@ -60,5 +76,24 @@ public class AreaScript : MonoBehaviour
 
         }
 
+        RefreshCompendiumItems();
+
+    }
+
+
+
+
+
+    public void RefreshCompendiumItems()
+    {
+
+        CompButtonScript[] list = ButtonParent.GetComponentsInChildren<CompButtonScript>();
+
+        for(int i = 0; i < CurrentItemPool.Length; i++)
+        {
+            list[i].item = CurrentItemPool[i];
+        }
+
+ 
     }
 }
