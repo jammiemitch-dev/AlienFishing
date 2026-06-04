@@ -31,7 +31,7 @@ public class UpgradeButtonScript : MonoBehaviour
     {
 
         //update text
-        text.text = (upgradeManager.Upgrades[ArrayLoc].upgradeName + " " + upgradeManager.Upgrades[ArrayLoc].level + ": " + upgradeManager.Upgrades[ArrayLoc].CurrentPrice);
+        text.text = (upgradeManager.Upgrades[ArrayLoc].upgradeName + " " + upgradeManager.Upgrades[ArrayLoc].level + ": " + upgradeManager.Upgrades[ArrayLoc].CurrentPrice + " SCRAP");
        
     }
 
