@@ -26,11 +26,19 @@ public class AreaScript : MonoBehaviour
 
     //All the stuff other than area defs
     private TextMeshProUGUI AreaText;
+    public GameObject ButtonParent;
+
+    private void Awake()
+    {
+        RefreshCompendiumItems();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         AreaText = GameObject.Find("AreaUI").GetComponentInChildren<TextMeshProUGUI>();
+
+        
     }
 
     // Update is called once per frame
@@ -68,5 +76,24 @@ public class AreaScript : MonoBehaviour
 
         }
 
+        RefreshCompendiumItems();
+
+    }
+
+
+
+
+
+    public void RefreshCompendiumItems()
+    {
+
+        CompButtonScript[] list = ButtonParent.GetComponentsInChildren<CompButtonScript>();
+
+        for(int i = 0; i < CurrentItemPool.Length; i++)
+        {
+            list[i].item = CurrentItemPool[i];
+        }
+
+ 
     }
 }
