@@ -132,6 +132,7 @@ public class FishingScript : MonoBehaviour
         TractorBeam.SetActive(false);
         Damage = 0;
         Slider.value = 0;
+        StopAllCoroutines();
     }
 
 
@@ -206,13 +207,14 @@ public class FishingScript : MonoBehaviour
 
     public IEnumerator CheckForItemSliderChange(float seconds)
     {
-        int chance = UnityEngine.Random.Range(0,5);
         yield return new WaitForSecondsRealtime(seconds);
-        chance = UnityEngine.Random.Range(1, 5);
-        if(chance == 1)
+
+        int chance = UnityEngine.Random.Range(0, 5); // 20% chance
+        if (chance == 1)
         {
             ItemValue = ChangeItemSliderValue();
         }
+
         IsValNull = null;
     }
 }
