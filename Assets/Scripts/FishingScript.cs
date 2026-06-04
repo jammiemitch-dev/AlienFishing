@@ -132,6 +132,7 @@ public class FishingScript : MonoBehaviour
         TractorBeam.SetActive(false);
         Damage = 0;
         Slider.value = 0;
+        IsValNull = null;
         StopAllCoroutines();
     }
 
@@ -144,16 +145,16 @@ public class FishingScript : MonoBehaviour
         {
             case (Item.Rarity.Common):
 
-                RarityValue = 16;
+                RarityValue = 13;
                 break;
 
 
             case (Item.Rarity.Uncommon):
-                RarityValue = 15;
+                RarityValue = 10;
                 break;
 
             case (Item.Rarity.Rare):
-                RarityValue = 10;
+                RarityValue = 9;
                 break;
 
 
@@ -209,7 +210,7 @@ public class FishingScript : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(seconds);
 
-        int chance = UnityEngine.Random.Range(0, 5); // 20% chance
+        int chance = UnityEngine.Random.Range(0, 4); // 20% chance
         if (chance == 1)
         {
             ItemValue = ChangeItemSliderValue();
