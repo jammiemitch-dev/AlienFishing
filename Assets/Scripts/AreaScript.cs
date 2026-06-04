@@ -93,7 +93,24 @@ public class AreaScript : MonoBehaviour
         {
             list[i].item = CurrentItemPool[i];
         }
+        //iterate over "leftovers" aka anything not touched by the first for loop
+        for (int i = CurrentItemPool.Length; i < list.Length; i++)
+        {
+            list[i].item = null;
+        }
 
- 
+    }
+
+
+    public void AreaButtonPressed(GameObject button)
+    {
+        if (button.name.Contains("+") && CurrentArea!=Areas.Artic)
+        {
+            CurrentArea++;
+        }
+        else if (button.name.Contains("-") && CurrentArea!=Areas.Farmlands)
+        {
+            CurrentArea--;
+        }
     }
 }
