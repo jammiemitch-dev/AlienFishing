@@ -117,6 +117,6 @@ public class ItemShowCaseScript : MonoBehaviour
         // 10 represents the amplitude
         float y = Mathf.Sin(Time.time * freq) * 10f;
         ImgTransform.localEulerAngles = new Vector3(0, 0, y);
-        Debug.Log(y);
+
     }
 }
