@@ -19,6 +19,10 @@ public class FishingScript : MonoBehaviour
     public AreaScript AreaScript;
     private Coroutine IsValNull;
 
+
+
+    public UpgradeManager upgradeManager;
+
     //Each Area should have its own itempool , this is just for testing
     public Item[] ItemPool;
     void Start()
@@ -34,8 +38,19 @@ public class FishingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(upgradeManager.TractorBeamMult != 0)
+        {
+            DamageMultiplier = upgradeManager.TractorBeamMult;
+        }
+        else
+        {
+            DamageMultiplier = 1;
+        }
 
-        if(Slider.gameObject.activeSelf) //If fishing minigame is active
+
+
+
+        if (Slider.gameObject.activeSelf) //If fishing minigame is active
         {
 
             Slider.value -= 20 * Time.deltaTime;
@@ -44,21 +59,21 @@ public class FishingScript : MonoBehaviour
 
 
 
-        
+
             // if space key is pressed
-          if (Input.GetKeyDown(KeyCode.Space))
-          {
-            Slider.value += SpacePressValue;
-          }
-        //-------------------------------;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Slider.value += SpacePressValue;
+            }
+            //-------------------------------;
 
-        
 
-          if (InRange(Slider.value, ItemValue, 5))
-          {
-              Damage = Damage * DamageMultiplier + 1 * Time.deltaTime;
+
+            if (InRange(Slider.value, ItemValue, 5))
+            {
+                Damage += DamageMultiplier + 1 * Time.deltaTime;
                 TractorBeam.SetActive(true);
-          }
+            }
             else
             {
                 TractorBeam.SetActive(false);
@@ -66,7 +81,7 @@ public class FishingScript : MonoBehaviour
 
 
 
-          if (Damage > item.Durability)
+            if (Damage > item.Durability)
             {
                 Debug.Log(item.name + " was caught!");
                 StopFishing(item);

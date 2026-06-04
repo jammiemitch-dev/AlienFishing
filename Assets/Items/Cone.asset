@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Some humans seem to use this as headwear
   Sprite: {fileID: 21300000, guid: 65838c1b274553442ac4cf3e13d77e5e, type: 3}
   rarity: 0
-  Durability: 2
+  Durability: 80
   MinWeight: 0
   MaxWeight: 0
   Weight: 0

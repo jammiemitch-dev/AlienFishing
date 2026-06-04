@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Display's images of other humans?
   Sprite: {fileID: 21300000, guid: 4d23234d1c877904eb0b2d847d83955e, type: 3}
   rarity: 1
-  Durability: 4
+  Durability: 140
   MinWeight: 7
   MaxWeight: 22
   Weight: 0
