@@ -1232,17 +1232,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1445428057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 916093366977510570, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+  m_PrefabInstance: {fileID: 7099689982980112651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1445428058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4740617051095869331, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
   m_PrefabInstance: {fileID: 7099689982980112651}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1445428057}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1445428061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445428057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69dac9196d41f0489df0c64e9afd80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Typewriter
+  speed: 0.03
 --- !u!4 &1547015255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 007dd3fb7f2a2594ab897dae9763c2b9, type: 3}
@@ -2126,8 +2144,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_overflowMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_characterSpacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4285428224
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_useMaxVisibleDescender
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5052104589986563181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5574283603885714668, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: CurrentlySelectedIcon
@@ -2266,6 +2308,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4643085764852192404, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1593302496}
+    - targetCorrespondingSourceObject: {fileID: 916093366977510570, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1445428061}
     - targetCorrespondingSourceObject: {fileID: 3776262547983746938, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 713093015}
