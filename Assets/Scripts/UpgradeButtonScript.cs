@@ -31,7 +31,8 @@ public class UpgradeButtonScript : MonoBehaviour
     {
 
         //update text
-        text.text = (upgradeManager.Upgrades[ArrayLoc].upgradeName + " " + upgradeManager.Upgrades[ArrayLoc].level + ": " + upgradeManager.Upgrades[ArrayLoc].CurrentPrice + " SCRAP");
+        int display_level = upgradeManager.Upgrades[ArrayLoc].level + 2;
+        text.text = (upgradeManager.Upgrades[ArrayLoc].upgradeName + " " + display_level + ": " + upgradeManager.Upgrades[ArrayLoc].CurrentPrice + " SCRAP");
        
     }
 
@@ -41,9 +42,11 @@ public class UpgradeButtonScript : MonoBehaviour
     {
         for (int i = 0; i < upgradeManager.Upgrades.Count; i++)
         {
-            if (upgradeManager.Upgrades[i])
+            if (upgradeManager.Upgrades[i] == upgrade)
             {
+                
                 return i;
+
             }
         }
         return -1;

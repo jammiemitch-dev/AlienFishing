@@ -35,6 +35,7 @@ public class CompButtonScript : MonoBehaviour
         else
         {
             images[1].sprite = NullSprite;
+            images[1].color = Color.white;
         }
     }
 }
