@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using TMPro;
 using System;
+using UnityEditor.ShaderKeywordFilter;
 public class AreaScript : MonoBehaviour
 {
     public enum Areas { 
@@ -27,9 +28,11 @@ public class AreaScript : MonoBehaviour
     //All the stuff other than area defs
     private TextMeshProUGUI AreaText;
     public GameObject ButtonParent;
+    private UpgradeManager upgradeManager;
 
     private void Awake()
     {
+        upgradeManager = gameObject.GetComponent<UpgradeManager>();
         RefreshCompendiumItems();
     }
 
@@ -106,7 +109,11 @@ public class AreaScript : MonoBehaviour
     {
         if (button.name.Contains("+") && CurrentArea!=Areas.Artic)
         {
-            CurrentArea++;
+            int value = (int)CurrentArea;
+            if(value < upgradeManager.MaxArea)
+            {
+                CurrentArea++;
+            }
         }
         else if (button.name.Contains("-") && CurrentArea!=Areas.Farmlands)
         {

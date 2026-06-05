@@ -41,9 +41,11 @@ public class UpgradeButtonScript : MonoBehaviour
     {
         for (int i = 0; i < upgradeManager.Upgrades.Count; i++)
         {
-            if (upgradeManager.Upgrades[i])
+            if (upgradeManager.Upgrades[i] == upgrade)
             {
+                UnityEngine.Debug.Log(i);
                 return i;
+
             }
         }
         return -1;
