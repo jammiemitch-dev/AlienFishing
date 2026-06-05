@@ -7,52 +7,29 @@ using UnityEngine.UI;
 public class CompendiumScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject CurrentlySelectedIcon;
-    public GameObject CurrentlySelectedText;
-    public GameObject CurrentlySelecteedDesc;
+    public Image CurrentlySelectedIcon;
+    public TextMeshProUGUI CurrentlySelectedText;
+    public TextMeshProUGUI CurrentlySelecteedDesc;
 
-    private RectTransform Compendium;
-    public float LerpSpeed;
-    public GameObject FishingSlider;
-    Vector2 ClosedPosition = new Vector3(-10,-150);
-    Vector2 OpenedPosition = new Vector2(-10, 0f);
-    public bool IsOpened;
-    void Start()
-    {
-        Compendium = transform.GetChild(0).gameObject.GetComponent<RectTransform>();
 
-    }
 
     // Update is called once per frame
-    void Update()
+
+    private void LateUpdate()
     {
-
-        if (FishingSlider.activeSelf)
+        if (CurrentlySelectedIcon.sprite == null)
         {
-            IsOpened = false;
-        }
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-             IsOpened = !IsOpened;          
-        }
-
-
-        if (IsOpened)
-        {
-            Compendium.anchoredPosition = Vector2.Lerp(Compendium.anchoredPosition, OpenedPosition, LerpSpeed * Time.deltaTime);
+            //make transparent
+            CurrentlySelectedIcon.color = new Color(CurrentlySelectedIcon.color.r, CurrentlySelectedIcon.color.g, CurrentlySelectedIcon.color.b, 0f);
         }
         else
         {
-            Compendium.anchoredPosition = Vector2.Lerp(Compendium.anchoredPosition, ClosedPosition, LerpSpeed * Time.deltaTime);
+            CurrentlySelectedIcon.color = new Color(CurrentlySelectedIcon.color.r, CurrentlySelectedIcon.color.g, CurrentlySelectedIcon.color.b, 1f);
         }
     }
-    
     public void OnCompendiumButtonPress(GameObject button)
     {
+
         if (!button.GetComponent<CompButtonScript>())
         {
             Debug.LogWarning("Compendium Button has no attached script!");
@@ -65,9 +42,9 @@ public class CompendiumScript : MonoBehaviour
         else
         {
             
-            CurrentlySelectedIcon.GetComponent<Image>().sprite = button.GetComponent<CompButtonScript>().item.Sprite;
-            CurrentlySelectedText.GetComponent<TextMeshProUGUI>().text = button.GetComponent<CompButtonScript>().item.name;
-            CurrentlySelecteedDesc.GetComponent<TextMeshProUGUI>().text = button.GetComponent<CompButtonScript>().item.Description;
+            CurrentlySelectedIcon.sprite = button.GetComponent<CompButtonScript>().item.Sprite;
+            CurrentlySelectedText.text = button.GetComponent<CompButtonScript>().item.name;
+            CurrentlySelecteedDesc.text = button.GetComponent<CompButtonScript>().item.Description;
         }
     }
 
