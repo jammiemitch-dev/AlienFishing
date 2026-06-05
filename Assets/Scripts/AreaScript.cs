@@ -15,6 +15,9 @@ public class AreaScript : MonoBehaviour
 
     }
 
+    
+
+
     public Areas CurrentArea;
     public Item[] CurrentItemPool;
   
@@ -28,12 +31,16 @@ public class AreaScript : MonoBehaviour
     //All the stuff other than area defs
     private TextMeshProUGUI AreaText;
     public GameObject ButtonParent;
+    public GameObject Earth;
     private UpgradeManager upgradeManager;
-
+    private Quaternion TargetRotation;
+    float t;
     private void Awake()
     {
         upgradeManager = gameObject.GetComponent<UpgradeManager>();
         RefreshCompendiumItems();
+
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,18 +64,22 @@ public class AreaScript : MonoBehaviour
 
             case (Areas.Farmlands):
                 CurrentItemPool = FarmLand_ItemPool;
+                TargetRotation = Quaternion.Euler(0, 0, 0);
                 break;
 
             case (Areas.Ocean):
                 CurrentItemPool = Ocean_ItemPool;
+                TargetRotation = Quaternion.Euler(0, 130, 0);
                 break;
 
             case (Areas.City):
                 CurrentItemPool = City_ItemPool;
+                TargetRotation = Quaternion.Euler(0, -170, -15);
                 break;
 
             case (Areas.Artic):
                 CurrentItemPool = Artic_ItemPool;
+                TargetRotation = Quaternion.Euler(0, 5, -110);
                 break;
 
 
@@ -81,6 +92,14 @@ public class AreaScript : MonoBehaviour
 
         RefreshCompendiumItems();
 
+
+        //This actually ended up looking amazing?????
+        if(Earth.transform.localRotation != TargetRotation)
+        {
+            t += Time.deltaTime * 0.02f;
+            Earth.transform.localRotation = Quaternion.Lerp(Earth.transform.localRotation, TargetRotation, t);
+        }
+        Debug.Log(t);
     }
 
 
@@ -107,6 +126,7 @@ public class AreaScript : MonoBehaviour
 
     public void AreaButtonPressed(GameObject button)
     {
+        t = 0;
         if (button.name.Contains("+") && CurrentArea!=Areas.Artic)
         {
             int value = (int)CurrentArea;
