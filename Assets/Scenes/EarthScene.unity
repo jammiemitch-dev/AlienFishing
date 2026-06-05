@@ -145,15 +145,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9ee2d5276112f744820464e870a9a7d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9ee2d5276112f744820464e870a9a7d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9ee2d5276112f744820464e870a9a7d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9ee2d5276112f744820464e870a9a7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0379cdb0f9b614ea73021c7e31f1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrapManager
-  Scrap: 0
+  Scrap: 40
   ScrapText: {fileID: 1435342156}
   instance: {fileID: 0}
 --- !u!4 &845995627
@@ -1009,6 +1009,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f000efc0a1c6937498f240ea641619db, type: 2}
   Artic_ItemPool: []
   ButtonParent: {fileID: 1667491553}
+  Earth: {fileID: 1910366358}
 --- !u!114 &845995629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,6 +1366,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007dd3fb7f2a2594ab897dae9763c2b9, type: 3}
+--- !u!1 &1910366358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b9ee2d5276112f744820464e870a9a7d, type: 3}
+  m_PrefabInstance: {fileID: 69174679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2095224046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3869435975438650987, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
       propertyPath: ItemPool.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3869435975438650987, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
       propertyPath: 'ItemPool.Array.data[0]'
@@ -1998,6 +2004,10 @@ PrefabInstance:
     - target: {fileID: 7049306231747637931, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049306231747637931, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7468231822522582280, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_Color.b
