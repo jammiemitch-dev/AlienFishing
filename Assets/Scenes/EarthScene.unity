@@ -425,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212879564}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25606084, y: -0.007992968, z: 0.0021173516, w: 0.96662533}
+  m_LocalRotation: {x: 0.25606084, y: -0.007999429, z: 0.0021190634, w: 0.9666253}
   m_LocalPosition: {x: 0, y: 5.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -536,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25606087, y: -0.00799297, z: 0.0021173523, w: 0.96662533}
+  m_LocalRotation: {x: 0.25606084, y: -0.0079994295, z: 0.002119064, w: 0.9666253}
   m_LocalPosition: {x: 0, y: 5.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1077,10 +1077,15 @@ MonoBehaviour:
   FarmLand_ItemPool:
   - {fileID: 11400000, guid: aadf079bf77a5614891e956297d855b7, type: 2}
   - {fileID: 11400000, guid: 2f61bb8220322e046a6b0ddba4e6a8a4, type: 2}
+  - {fileID: 11400000, guid: a0a6646d502369148bf99bde85eced4f, type: 2}
+  - {fileID: 11400000, guid: cd61cbd324788cc4a9c90b1c380c717c, type: 2}
+  - {fileID: 11400000, guid: ba6bfe9fe5cc80749afa5f5ccf0b7ea3, type: 2}
   Ocean_ItemPool:
   - {fileID: 11400000, guid: faa1008d421182c4787b804f3d363dd5, type: 2}
   - {fileID: 11400000, guid: aadf079bf77a5614891e956297d855b7, type: 2}
   - {fileID: 11400000, guid: 998d909474788854da66033e270391b2, type: 2}
+  - {fileID: 11400000, guid: 5e092c9510eb89942bcf3fe6ba82925a, type: 2}
+  - {fileID: 11400000, guid: 17fce06be5e07b34baaa469e7007a95d, type: 2}
   City_ItemPool:
   - {fileID: 11400000, guid: e048dc1a033ce2d438561c3cb7f4089b, type: 2}
   - {fileID: 11400000, guid: f51ddc1a1535e814c8d5a0a010f12aa1, type: 2}

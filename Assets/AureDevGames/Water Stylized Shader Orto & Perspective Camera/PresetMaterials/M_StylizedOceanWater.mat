@@ -27,7 +27,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap: {}
@@ -99,23 +99,23 @@ Material:
     - _CaveBlend: 0
     - _CaveDistortion: 0
     - _DepthCompareDistance: 0.1
-    - _DepthFadeDistance: 10
+    - _DepthFadeDistance: 0
     - _FoamBlend: 0.09
     - _FresnelPower: 1
     - _GradientRefractionScale: 10
-    - _HorizonDistance: 78
+    - _HorizonDistance: 200
     - _Hue: 1
     - _IntersectionFoamBlend: 1.09
     - _IntersectionFoamCutoff: 3.57
     - _IntersectionFoamDepth: 2.43
     - _IntersectionFoamDirection: 0.65
     - _IntersectionFoamFade: 1.48
-    - _IntersectionFoamSpeed: 0.16
+    - _IntersectionFoamSpeed: 0.05
     - _IntersectionFoamTiling: 1.27
     - _LightingHardness: 0.39
     - _LightingSmoothness: 12.34
     - _NormalScale: 1.61
-    - _NormalSpeed: 0.16
+    - _NormalSpeed: 0.05
     - _NormalStrength: 1.71
     - _OrthographicCamSize: 0
     - _PERSPECTIVE: 0
@@ -129,15 +129,15 @@ Material:
     - _RefractionSpeed: 0.01
     - _RefractionStrength: 0
     - _RippleStrength: 83.62
-    - _Saturation: 1
+    - _Saturation: 1.8
     - _SecondaryFoamBlend: 0.06
     - _Show: 0
     - _SkyboxForce: 2.5
     - _Steps: 1
     - _SurfaceFoamDirection: 0
-    - _SurfaceFoamDistorsion: 0.2
+    - _SurfaceFoamDistorsion: 0.1
     - _SurfaceFoamSpeed: 0
-    - _SurfaceFoamTiling: 1
+    - _SurfaceFoamTiling: 1.5
     - _TileSize: 200
     - _Value: 1
     - _WORLD_SPACE_UV: 0
@@ -147,7 +147,7 @@ Material:
     - _WaveLength: 1
     - _WaveRiverLength: 0.73
     - _WaveRiverWidth: 0.16
-    - _WaveSpeed: 0.25
+    - _WaveSpeed: 0.05
     - _WaveSteepness: 0
     - _WaveStepness: 0.35
     - _WaveTileSize: 1.98
@@ -164,7 +164,7 @@ Material:
     - _IntersectionFoamColor: {r: 1.1486984, g: 1.1486984, b: 1.1486984, a: 1}
     - _PositionRipples: {r: 0, g: 0, b: 0, a: 0}
     - _SecondaryFoamColor: {r: 0, g: 0.002903101, b: 0.19245279, a: 0.40784314}
-    - _ShallowColor: {r: 0, g: 0.57150817, b: 0.7056604, a: 1}
+    - _ShallowColor: {r: 0, g: 0.16834375, b: 0.20754701, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.31764707}
     - _SurfaceFoamColor: {r: 2.2868972, g: 2.2868972, b: 2.2868972, a: 0.2784314}
     - _TopColor: {r: 0, g: 0.17848217, b: 0.5622641, a: 0.44705883}
