@@ -19,7 +19,10 @@ public class ShopScript : MonoBehaviour
     public void OnShopButtonClick(UpgradeButtonScript buttonscript)
     {
         Upgrade upgrade = buttonscript.upgrade;
-
+        if(upgrade.level >= upgrade.LevelCap)
+        {
+            return;
+        }
 
        if(ScrapManager.Scrap >= upgrade.CurrentPrice)
         {
