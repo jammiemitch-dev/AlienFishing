@@ -14,11 +14,13 @@ public class FishingScript : MonoBehaviour
     public int ItemValue; // the value on the slider that the item will take - this should have a range of about 3+-;
     private bool IsFishing = false;
     public float Damage;
+
     public float DamageMultiplier;
     public GameObject TractorBeam;
     public AreaScript AreaScript;
     private Coroutine IsValNull;
-
+    public ParticleSystem SparksPFX;
+    
 
 
     public UpgradeManager upgradeManager;
@@ -53,11 +55,12 @@ public class FishingScript : MonoBehaviour
         if (Slider.gameObject.activeSelf) //If fishing minigame is active
         {
 
+           
+
+
+
+
             Slider.value -= 20 * Time.deltaTime;
-
-
-
-
 
 
             // if space key is pressed
@@ -126,6 +129,13 @@ public class FishingScript : MonoBehaviour
     //STOP FISHING SHOULD INCLUDE A PARAMETER FOR IF AN ITEM WAS CAUGHT
     void StopFishing(Item? item)
     {
+
+        if (!item)
+        {
+            Instantiate(SparksPFX);
+        }
+
+
         Slider.gameObject.SetActive(false);
         PlayerInventoryScript.instance.AddItemToInventory(item);
         IsFishing = false;

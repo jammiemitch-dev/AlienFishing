@@ -1806,6 +1806,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 705117280}
     - target: {fileID: 3869435975438650987, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
+      propertyPath: SparksPFX
+      value: 
+      objectReference: {fileID: 6998171894280166130, guid: 8bc27716b98fd014abf1d356fcc6cb6b, type: 3}
+    - target: {fileID: 3869435975438650987, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
       propertyPath: AreaScript
       value: 
       objectReference: {fileID: 845995628}
