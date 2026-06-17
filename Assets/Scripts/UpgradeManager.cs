@@ -9,6 +9,8 @@ public class UpgradeManager : MonoBehaviour
 
     //acts as a clamp on how far the player can go
     public int MaxArea = 1;
+
+
     void Start()
     {
         foreach(Upgrade upgrade in Upgrades)
@@ -26,7 +28,6 @@ public class UpgradeManager : MonoBehaviour
         if(TractorBeamRef.level != 0)
         {
             TractorBeamMult = TractorBeamRef.level * 1.005f;
-            Debug.Log(TractorBeamRef.level);
         }
         else
         {

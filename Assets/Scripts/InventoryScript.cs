@@ -19,5 +19,6 @@ public class InventoryScript : MonoBehaviour
         InventoryCount = PlayerInventoryScript.Inventory.Count;
         
         texts[1].text = ("Containment Count : " + InventoryCount);
+        texts[2].text = ("Cargo Mass : " + PlayerInventoryScript.CurrentWeight + " / " + PlayerInventoryScript.MaxInvWeight);
     }
 }

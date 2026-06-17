@@ -1,16 +1,16 @@
-using UnityEngine;
-using System.Collections.Generic;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 public class PlayerInventoryScript : MonoBehaviour
 {
     public List<Item> Inventory = new List<Item>();
+    public float MaxInvWeight = 30f;
+    public float CurrentWeight;
     public GameObject ItemShowCase;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject GameManager;
-
-    public Item TestItem;
     public static PlayerInventoryScript instance { get; private set; }
 
     private void Awake()
@@ -29,21 +29,34 @@ public class PlayerInventoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            AddItemToInventory(TestItem);
-        }
+        
     }
 
     public void AddItemToInventory(Item item)
     {
+
+        //Forgot to generate the item's weight lmao
+        item.Weight = UnityEngine.Random.Range(item.MinWeight, item.MaxWeight);
+        item.Weight = (float)Math.Round(item.Weight, 2);
+
+
+
+
+        //CASES ----------------------------------------------------------
         // In case of no item being caught
-        if(item == null)
+        if (item == null)
         {
             return;
         }
 
-
+        //in case of item not having enough wieght idk
+        if(CurrentWeight + item.Weight > MaxInvWeight)
+        {
+            //Add error message here
+            Debug.LogWarning("Item over Max Inventory Weight!");
+            return;
+        }
+        //----------------------------------------------------------------
 
         //give scrap dependent on item rarity
         int scrapamount;
@@ -67,11 +80,9 @@ public class PlayerInventoryScript : MonoBehaviour
                 scrapamount = 0;
                 break;
 
-
-
         }
 
-
+        CurrentWeight += item.Weight;
         GameManager.GetComponent<ScrapManager>().AddScrap(scrapamount);
         ItemShowCase.GetComponent<ItemShowCaseScript>().SetValues(item);
         ItemShowCase.SetActive(true);
