@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4968273f2827fb4cb853094e848378c, type: 3}
   m_Name: Haybale
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  Description: Some teen humans use these for procreation
+  Description: Some adolescent humans can be found in these.
   Sprite: {fileID: 21300000, guid: 19a99af142755d545b844f26c2a392dd, type: 3}
   rarity: 1
   Durability: 100
   MinWeight: 5.5
   MaxWeight: 8.8
-  Weight: 0
+  Weight: 5.76

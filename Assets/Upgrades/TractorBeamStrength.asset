@@ -15,4 +15,5 @@ MonoBehaviour:
   upgradeName: Tractor Beam Strength
   basePrice: 10
   priceMultiplier: 1.5
-  level: 7
+  LevelCap: 10
+  level: 0

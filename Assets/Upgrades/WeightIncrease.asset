@@ -15,4 +15,5 @@ MonoBehaviour:
   upgradeName: Copacity Increase
   basePrice: 20
   priceMultiplier: 1.5
+  LevelCap: 10
   level: 0
