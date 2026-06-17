@@ -31,6 +31,7 @@ public class LerpUIScript : MonoBehaviour
             }
         }
 
+        
         if (Input.GetKeyDown(InputKey))
         {
             IsOpened = !IsOpened;
