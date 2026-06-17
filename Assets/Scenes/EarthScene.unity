@@ -257,6 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e03e2b6a535b3b4f8c6dd69ebf6380d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryScript
+  PlayerInventoryScript: {fileID: 872430623}
+  texts: []
 --- !u!1 &212879564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1265,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6312465488282632050, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
   m_PrefabInstance: {fileID: 2618879692138413352}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &872430623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5153027549808319961, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
+  m_PrefabInstance: {fileID: 2618879692138413352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961aeb4d62545524fa9ae24f22307464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventoryScript
 --- !u!224 &945438435 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1967057662059023230, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
