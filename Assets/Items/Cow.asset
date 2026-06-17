@@ -15,8 +15,8 @@ MonoBehaviour:
   Description: Produces some kind of white substance the earthlings seem to crave.
     I call it untrustworthy.
   Sprite: {fileID: 21300000, guid: a71eca4f85cb3e74aadb198b7645382c, type: 3}
-  rarity: 0
+  rarity: 2
   Durability: 120
-  MinWeight: 400
-  MaxWeight: 800
-  Weight: 0
+  MinWeight: 12
+  MaxWeight: 20
+  Weight: 569.65
