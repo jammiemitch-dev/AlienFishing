@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Some teen humans use these for procreation
   Sprite: {fileID: 21300000, guid: 19a99af142755d545b844f26c2a392dd, type: 3}
   rarity: 1
-  Durability: 70
+  Durability: 100
   MinWeight: 5.5
   MaxWeight: 8.8
   Weight: 0

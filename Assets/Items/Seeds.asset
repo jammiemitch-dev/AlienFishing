@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: Looks as though some are sprouting
   Sprite: {fileID: 21300000, guid: ab1f24625a57ca54984d4949e53185d5, type: 3}
   rarity: 0
-  Durability: 40
+  Durability: 70
   MinWeight: 0.2
   MaxWeight: 1.1
   Weight: 0
