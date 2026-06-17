@@ -3,7 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
 public class CompendiumScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -11,7 +11,7 @@ public class CompendiumScript : MonoBehaviour
     public TextMeshProUGUI CurrentlySelectedText;
     public TextMeshProUGUI CurrentlySelecteedDesc;
 
-
+    public List<Item> CompendiumInventory;
 
     // Update is called once per frame
 
@@ -26,6 +26,7 @@ public class CompendiumScript : MonoBehaviour
         {
             CurrentlySelectedIcon.color = new Color(CurrentlySelectedIcon.color.r, CurrentlySelectedIcon.color.g, CurrentlySelectedIcon.color.b, 1f);
         }
+
     }
     public void OnCompendiumButtonPress(GameObject button)
     {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8af5324236b924c91a0961f823ea30, type: 3}
   m_Name: WeightIncrease
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
-  upgradeName: 
-  basePrice: 10
+  upgradeName: Copacity Increase
+  basePrice: 20
   priceMultiplier: 1.5
   level: 0

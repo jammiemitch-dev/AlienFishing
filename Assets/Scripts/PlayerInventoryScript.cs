@@ -11,6 +11,7 @@ public class PlayerInventoryScript : MonoBehaviour
     public float CurrentWeight;
     public GameObject ItemShowCase;
     public GameObject GameManager;
+    public CompendiumScript compscript;
     public static PlayerInventoryScript instance { get; private set; }
 
     private void Awake()
@@ -47,41 +48,20 @@ public class PlayerInventoryScript : MonoBehaviour
         //in case of item not having enough wieght idk
         if(CurrentWeight + item.Weight > MaxInvWeight)
         {
-            //Add error message here
+            
             Debug.LogWarning("Item over Max Inventory Weight!");
+
             return;
         }
    
 
         //give scrap dependent on item rarity
-        int scrapamount;
-        switch (item.rarity)
-        {
 
-            case Item.Rarity.Common:
-                scrapamount = UnityEngine.Random.Range(2, 3);
-                break;
-
-            case Item.Rarity.Uncommon:
-                scrapamount = UnityEngine.Random.Range(3, 6);
-                break;
-
-            case Item.Rarity.Rare:
-                scrapamount = UnityEngine.Random.Range(6, 7);
-                break;
-
-            default:
-                Debug.LogWarning("Item Rarity not recognized");
-                scrapamount = 0;
-                break;
-
-        }
 
         //Since this is only updated whenever an item is added the scrap button will need to set curretnweight to zero along with removing all items from inv
         CurrentWeight += item.Weight;
 
         //This function should be moved to the scrap button when added
-        GameManager.GetComponent<ScrapManager>().AddScrap(scrapamount);
         ItemShowCase.GetComponent<ItemShowCaseScript>().SetValues(item);
         ItemShowCase.SetActive(true);
         if (!Inventory.Contains(item))
@@ -89,7 +69,8 @@ public class PlayerInventoryScript : MonoBehaviour
             Debug.Log("New Item Added!!");
         }
 
-            Inventory.Add(item);
+        Inventory.Add(item);
+        compscript.CompendiumInventory.Add(item);
         
     }
 }

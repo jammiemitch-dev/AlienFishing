@@ -1258,6 +1258,7 @@ MonoBehaviour:
   Upgrades:
   - {fileID: 11400000, guid: 7ee7ff8922fbccd43a9f6038e8176b57, type: 2}
   - {fileID: 11400000, guid: cce8036c59c90424b8ddef045d17a8be, type: 2}
+  - {fileID: 11400000, guid: 292e5824927b1c2409eca402dcbe37ba, type: 2}
   TractorBeamMult: 0
   MaxArea: 1
 --- !u!4 &872430622 stripped
@@ -1594,6 +1595,7 @@ GameObject:
   - component: {fileID: 1025487660}
   - component: {fileID: 1025487659}
   - component: {fileID: 1025487658}
+  - component: {fileID: 1025487661}
   m_Layer: 5
   m_Name: SELLBUTTON
   m_TagString: Untagged
@@ -1664,7 +1666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1025487659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1025487661}
+        m_TargetAssemblyTypeName: ScrapButtonScript, Assembly-CSharp
+        m_MethodName: OnScrapButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1025487659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,6 +1717,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025487656}
   m_CullTransparentMesh: 1
+--- !u!114 &1025487661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025487656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf88eb07c1410e4ab224a206a140518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrapButtonScript
+  playerInvScript: {fileID: 872430623}
+  ScrapMan: {fileID: 845995626}
 --- !u!1 &1084657048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Copacity : 0 / 120'
+  m_text: 'Cargo Mass : 0 / 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ec21696af724214cb4352e35f2ce721, type: 2}
   m_sharedMaterial: {fileID: -3583143318099927554, guid: 9ec21696af724214cb4352e35f2ce721, type: 2}
@@ -2401,7 +2429,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691875339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2409,7 +2437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: -15}
+  m_AnchoredPosition: {x: 37.2, y: -15}
   m_SizeDelta: {x: 25, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691875341
@@ -2845,6 +2873,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 694154992}
     - target: {fileID: 5153027549808319961, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
+      propertyPath: CurrentWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153027549808319961, guid: ed3be8e59d747d4438c24f9c4997f5b9, type: 3}
       propertyPath: Inventory.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -3097,6 +3129,10 @@ PrefabInstance:
       propertyPath: NullSprite
       value: 
       objectReference: {fileID: 21300000, guid: b7063da1e6769bc4f88f88e4b98805c6, type: 3}
+    - target: {fileID: 2708574158789523127, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2725589144526575548, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3116,6 +3152,18 @@ PrefabInstance:
     - target: {fileID: 3142432700577817223, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4285362688
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185477937728592918, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0002693534
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185477937728592918, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37.20001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185477937728592918, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14.999969
       objectReference: {fileID: 0}
     - target: {fileID: 3274176529297095365, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_AnchorMax.x
