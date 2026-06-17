@@ -129,13 +129,10 @@ public class FishingScript : MonoBehaviour
     //STOP FISHING SHOULD INCLUDE A PARAMETER FOR IF AN ITEM WAS CAUGHT
     void StopFishing(Item? item)
     {
-
-        if (!item)
+        if (item == null)
         {
             Instantiate(SparksPFX);
         }
-
-
         Slider.gameObject.SetActive(false);
         PlayerInventoryScript.instance.AddItemToInventory(item);
         IsFishing = false;

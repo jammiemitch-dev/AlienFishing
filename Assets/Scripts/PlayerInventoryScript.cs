@@ -34,21 +34,16 @@ public class PlayerInventoryScript : MonoBehaviour
 
     public void AddItemToInventory(Item item)
     {
-
-        //Forgot to generate the item's weight lmao
-        item.Weight = UnityEngine.Random.Range(item.MinWeight, item.MaxWeight);
-        item.Weight = (float)Math.Round(item.Weight, 2);
-
-
-
-
-        //CASES ----------------------------------------------------------
-        // In case of no item being caught
+        //in the case no item was caught
         if (item == null)
         {
             return;
         }
 
+       
+        //generate item weight and do stuff
+        item.Weight = UnityEngine.Random.Range(item.MinWeight, item.MaxWeight);
+        item.Weight = (float)Math.Round(item.Weight, 2);
         //in case of item not having enough wieght idk
         if(CurrentWeight + item.Weight > MaxInvWeight)
         {
@@ -56,7 +51,7 @@ public class PlayerInventoryScript : MonoBehaviour
             Debug.LogWarning("Item over Max Inventory Weight!");
             return;
         }
-        //----------------------------------------------------------------
+   
 
         //give scrap dependent on item rarity
         int scrapamount;
@@ -82,7 +77,10 @@ public class PlayerInventoryScript : MonoBehaviour
 
         }
 
+        //Since this is only updated whenever an item is added the scrap button will need to set curretnweight to zero along with removing all items from inv
         CurrentWeight += item.Weight;
+
+        //This function should be moved to the scrap button when added
         GameManager.GetComponent<ScrapManager>().AddScrap(scrapamount);
         ItemShowCase.GetComponent<ItemShowCaseScript>().SetValues(item);
         ItemShowCase.SetActive(true);
