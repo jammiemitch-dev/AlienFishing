@@ -15,4 +15,5 @@ MonoBehaviour:
   upgradeName: Unlock Area
   basePrice: 20
   priceMultiplier: 1.2
-  level: 0
+  LevelCap: 3
+  level: 2

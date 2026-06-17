@@ -7,8 +7,11 @@ public class CompButtonScript : MonoBehaviour
     public Item item;
     private Image[] images;
     public bool IsClickable = false;
+
+    private CompendiumScript CompendiumScript;
     void Start()
     {
+        CompendiumScript = GetComponentInParent<CompendiumScript>();
         images = GetComponentsInChildren<Image>();
     }
 
@@ -20,7 +23,7 @@ public class CompButtonScript : MonoBehaviour
 
 
             images[1].sprite = item.Sprite;
-            if (!PlayerInventoryScript.instance.Inventory.Contains(item))
+            if (!CompendiumScript.CompendiumInventory.Contains(item))
             {
                 images[1].color = Color.black;
                 IsClickable = false;

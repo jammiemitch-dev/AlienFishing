@@ -15,7 +15,7 @@ MonoBehaviour:
   Description: In about 1000 years these creatures will take over this planet
   Sprite: {fileID: 21300000, guid: 4f47f6d02cf5cf14a9a4c28fff425c98, type: 3}
   rarity: 0
-  Durability: 40
+  Durability: 100
   MinWeight: 2.2
   MaxWeight: 10.5
   Weight: 0
