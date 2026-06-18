@@ -502,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212879564}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25606084, y: -0.007999429, z: 0.0021190634, w: 0.9666253}
+  m_LocalRotation: {x: 0.25606078, y: -0.00800086, z: 0.0021194424, w: 0.9666253}
   m_LocalPosition: {x: 0, y: 5.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -688,7 +688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25606084, y: -0.0079994295, z: 0.002119064, w: 0.9666253}
+  m_LocalRotation: {x: 0.25606078, y: -0.00800086, z: 0.0021194422, w: 0.9666253}
   m_LocalPosition: {x: 0, y: 5.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3950,6 +3950,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 5727709358347095230, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_UpdateRectTransformForStandalone
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5736972406450875620, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4005,6 +4009,26 @@ PrefabInstance:
     - target: {fileID: 7468231822522582280, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522623712993258208, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_ScaleFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522623712993258208, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522623712993258208, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522623712993258208, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522623712993258208, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7557769187748287181, guid: 62fbe84563aa38e488e6878a38e62d7c, type: 3}
       propertyPath: m_Sprite

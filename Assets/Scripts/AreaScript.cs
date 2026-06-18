@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using TMPro;
 using System;
-using UnityEditor.ShaderKeywordFilter;
 public class AreaScript : MonoBehaviour
 {
     public enum Areas { 
