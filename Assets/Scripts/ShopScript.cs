@@ -4,8 +4,8 @@ public class ShopScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public ScrapManager ScrapManager;
-
-
+    public AudioSource ButtonClick;
+    public AudioSource DrillSFX;
     public List<Upgrade> Upgrades;
     
 
@@ -26,6 +26,8 @@ public class ShopScript : MonoBehaviour
 
        if(ScrapManager.Scrap >= upgrade.CurrentPrice)
         {
+            ButtonClick.Play();
+            DrillSFX.Play();
             ScrapManager.AddScrap(-upgrade.CurrentPrice);
             upgrade.LevelUp();
         }

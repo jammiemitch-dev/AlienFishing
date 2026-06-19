@@ -72,7 +72,7 @@ public class FishingScript : MonoBehaviour
 
 
 
-            if (InRange(Slider.value, ItemValue, 5))
+            if (InRange(Slider.value, ItemValue, 7))
             {
                 Damage += DamageMultiplier + 1 * Time.deltaTime;
                 TractorBeam.SetActive(true);
