@@ -98,14 +98,28 @@ public class ItemShowCaseScript : MonoBehaviour
         img.sprite = item.Sprite;
 
 
-        if (item.rarity != Item.Rarity.Common)
+
+        switch (item.rarity)
         {
-            textbox.color = Color.turquoise;
+            case (Item.Rarity.Common):
+                textbox.color = Color.white;
+                break;
+
+            case (Item.Rarity.Uncommon):
+                textbox.color = Color.turquoise;
+                break;
+
+            case (Item.Rarity.Rare):
+                textbox.color = Color.gold;
+                break;
+
+            default:
+                textbox.color = Color.white;
+                break;
+
         }
-        else
-        {
-            textbox.color = Color.white;
-        }
+
+
     }
 
 

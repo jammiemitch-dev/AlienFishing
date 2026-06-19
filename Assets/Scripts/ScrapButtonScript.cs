@@ -5,6 +5,7 @@ public class ScrapButtonScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public PlayerInventoryScript playerInvScript;
     public ScrapManager ScrapMan;
+    public AudioSource buttonSFX;
     void Start()
     {
         
@@ -18,6 +19,7 @@ public class ScrapButtonScript : MonoBehaviour
 
     public void OnScrapButtonPress()
     {
+
         foreach(Item item in playerInvScript.Inventory)
         {
             int scrapamount;
@@ -44,6 +46,7 @@ public class ScrapButtonScript : MonoBehaviour
             }
 
             ScrapMan.AddScrap(scrapamount);
+            buttonSFX.Play();
         }
 
         playerInvScript.Inventory.Clear();

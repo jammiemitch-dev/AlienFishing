@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuScript : MonoBehaviour
 {
+    public AudioSource ButtonClick;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +17,7 @@ public class MenuScript : MonoBehaviour
 
     public void OnButtonPressed(GameObject buttonGameObject)
     {
+        ButtonClick.Play();
         if (buttonGameObject.name.Contains("Quit"))
         {
             Application.Quit();

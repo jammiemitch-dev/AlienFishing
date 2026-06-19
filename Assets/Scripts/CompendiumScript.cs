@@ -7,9 +7,11 @@ using System.Collections.Generic;
 public class CompendiumScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public AudioSource ButtonPressSFX;
     public Image CurrentlySelectedIcon;
     public TextMeshProUGUI CurrentlySelectedText;
     public TextMeshProUGUI CurrentlySelecteedDesc;
+    public TextMeshProUGUI CurrentlySelectedRarity;
 
     public List<Item> CompendiumInventory;
 
@@ -42,10 +44,11 @@ public class CompendiumScript : MonoBehaviour
         }
         else
         {
-            
+            ButtonPressSFX.Play();
             CurrentlySelectedIcon.sprite = button.GetComponent<CompButtonScript>().item.Sprite;
             CurrentlySelectedText.text = button.GetComponent<CompButtonScript>().item.name;
             CurrentlySelecteedDesc.text = button.GetComponent<CompButtonScript>().item.Description;
+            CurrentlySelectedRarity.text = button.GetComponent<CompButtonScript>().item.rarity.ToString();
         }
     }
 

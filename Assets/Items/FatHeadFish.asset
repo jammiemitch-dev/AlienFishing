@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   Description: It's head may be large but it's brain is not
   Sprite: {fileID: 21300000, guid: f6324159c27917d40a06dc48e435b66e, type: 3}
-  rarity: 1
+  rarity: 2
   Durability: 140
   MinWeight: 4.5
-  MaxWeight: 12.2
+  MaxWeight: 8.2
   Weight: 0
